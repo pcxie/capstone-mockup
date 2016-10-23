@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: #669999;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
+<title>Goals</title>
+</head>
+<body>
+<div class = "container">
+<header><h1 style="font-family:avenir">Update Goals</h1></header>
+
+<nav>
+  <ul>
+    <li style="font-family:avenir"><a href="home.html">Home</a></li>
+    <br>
+    <li style="font-family:avenir"><a href="input.html">Input a transaction</a></li>
+    <br>
+    <li style="font-family:avenir"><a href="monthly.html">View your monthly spending report</a></li>
+    <br>
+    <li style="font-family:avenir"><a href="yearly.html">View your yearly spending report</a></li>
+  </ul>
+</nav>
+
+<article style="font-family:avenir">
+<select name="month">
+    <option value="jan">January</option>
+    <option value="feb">February</option>
+    <option value="march">March</option>
+    <option value="apr">April</option>
+    <option value="may">May</option>
+    <option value="jun">June</option>
+    <option value="jul">July</option>
+    <option value="aug">August</option>
+    <option value="sept">September</option>
+    <option value="oct">October</option>
+    <option value="nov">November</option>
+    <option value="dec">December</option>
+</select><br>
+<br>
+Maximum amount I wish to spend this month:
+<input type="text" name="total"><br>
+<br>
+For each category: <br>
+Food:
+<input type="text" name="food"><br>
+Rent:
+<input type="text" name="rent"><br>
+Bills:
+<input type="text" name="bills"><br>
+Clothes:
+<input type="text" name="clothes"><br>
+Makeup:
+<input type="text" name="makeup"><br>
+Gifts:
+<input type="text" name="gifts"><br>
+Personal:
+<input type="text" name="personal"><br>
+<br>
+<button type="button" onclick="alert('Your goals have been updated')">Update</button>
+</article>
+
+<footer style="font-family:avenir">Pearl Xie</footer>
+</div>
+</body>
+</html>
