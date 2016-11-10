@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Firebase Hosting</title>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-messaging.js"></script>
+
+  </head>
+  <body>
+    <div class = "container">
+      <header>
+   <h1 style="font-family:salsabilla; font-size: 165%">Stop Spending So Much F*cking Money :-)</h1>
+</header>
+
+<title>Home</title>
+</head>
+
+<nav>
+  <ul>
+    <li style="font-family:avenir"><a href="input.html">Input a transaction</a></li>
+    <br>
+    <li style="font-family:avenir"><a href="monthly.html">View your monthly spending report</a></li>
+    <br>
+    <li style="font-family:avenir"><a href="yearly.html">View your yearly spending report</a></li>
+    <br>
+    <li style="font-family:avenir"><a href="goals.html">Update your monthly goals</a></li>
+  </ul>
+</nav>
+
+<article>
+    <h1 style="text-align:center; font-family:avenir">[Month]</h1>
+    <img src="http://bav0.com/wp-content/uploads/sites/11/2014/06/pie-chart.png" alt="pie_chart" style="float:right;width:284px;height:189px;">
+    <p style="font-family:avenir">You have spent ____ of your ____ monthly goal so far.</p>
+
+</article>
+
+<footer style="font-family:avenir">Pearl Xie</footer>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC5OZR25PCUhi3S9hfd7chiGity3hSUUEY",
+    authDomain: "capstone-52a74.firebaseapp.com",
+    databaseURL: "https://capstone-52a74.firebaseio.com",
+    storageBucket: "capstone-52a74.appspot.com",
+    messagingSenderId: "1008070721216"
+  };
+  firebase.initializeApp(config);
+</script>
+  </body>
+</html>
