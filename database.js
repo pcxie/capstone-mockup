@@ -1,6 +1,6 @@
-var expenses = new Firebase('https://capstone-52a74.firebaseio.com/');
+//var expenses = new Firebase('https://capstone-52a74.firebaseio.com/');
 
-function saveInputs(event) {
+function saveInputs() {
 		var description = document.getElementById('description').value.trim();
 	
 		var month_select = document.getElementById('month');
@@ -30,13 +30,15 @@ function saveInputs(event) {
 			category = document.getElementById('misc').value;
 		}
 		
+		debugger;
 		saveToFB(description, month, day, amount, category);
 	
 	
 }
 
 function saveToFB(description, month, day, amount, category) {
-	expenses.push({
+	//expenses.push({
+	firebase.database.ref("capstone-52a74/").push({
 		description: description,
 		month: month,
 		day: day,
@@ -45,23 +47,17 @@ function saveToFB(description, month, day, amount, category) {
 	})
 }
 
-/*var input = new Firebase('https://capstone-52a74.firebaseio.com/');
-
-function saveExpense() {
-	var description = $('description').text();
-	var date = $('date').text();
-	var amount = $('amount').text();
-	var category = $('category').text();
-
-	firebase.database().set({
-		description: description, 
-		date: date, 
-		amount: amount,
-		category: category
-	});
+function testInput() {
+    
+        var expense = {
+        description: "CFA",
+        month: "October",
+        day: 30,
+        amount: 50,
+        category: "Food"
+    }
+    database.ref().push(expense);
 }
-//var submit = document.getElementsByTagName('button')[0];
-//window.onload = function() {
-	//submit.onClick = input;
-//}
+
+
 
