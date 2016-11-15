@@ -48,8 +48,7 @@ function saveToFB(description, month, day, amount, category) {
 }
 
 function testInput() {
-    
-        var expense = {
+    	var expense = {
         description: "CFA",
         month: "October",
         day: 30,
@@ -58,6 +57,38 @@ function testInput() {
     }
     database.ref().push(expense);
 }
+
+function refreshUI(list) {
+    var lis = '';
+    for (var i = 0; i < list.length; i++) {
+        lis += '<li>' + list[i] + '</li>';
+    };
+    document.getElementById('listOutput').innerHTML = lis;
+};
+
+
+
+database.ref().on('value', function(snapshot) {
+	console.log(snapshot.val());
+
+  	var data = snapshot.val();
+	var list = [];
+	for (var key in data) {
+    	console.log(key);
+        if (data.hasOwnProperty(key)) {
+            description = data[key].description ? data[key].description : '';
+            console.log(description);
+            if (description.trim().length > 0) {
+                var output = "$" + description;
+                list.push(output);
+            }
+        }
+    }
+    console.log(list);
+    // refresh the UI
+    refreshUI(list);
+
+});
 
 
 
