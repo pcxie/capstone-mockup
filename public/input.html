@@ -1,44 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-div.container {
-    width: 100%;
-    border: 1px solid gray;
-}
-
-header, footer {
-    padding: 1em;
-    color: white;
-    background-color: #669999;
-    clear: left;
-    text-align: center;
-}
-
-nav {
-    float: left;
-    max-width: 160px;
-    margin: 0;
-    padding: 1em;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-   
-nav ul a {
-    text-decoration: none;
-}
-
-article {
-    margin-left: 170px;
-    border-left: 1px solid gray;
-    padding: 1em;
-    overflow: hidden;
-}
-</style>
 <title>Input</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 </head>
 <body>
 <div class = "container">
@@ -47,7 +13,7 @@ article {
 
 <nav>
   <ul>
-    <li style="font-family:avenir"><a href="home.html">Home</a></li>
+    <li style="font-family:avenir"><a href="index.html">Home</a></li>
     <br>
     <li style="font-family:avenir"><a href="monthly.html">View your monthly spending report</a></li>
     <br>
@@ -56,12 +22,18 @@ article {
     <li style="font-family:avenir"><a href="goals.html">Update your monthly goals</a></li>
   </ul>
 </nav>
-
 <article style="font-family:avenir">
-Description:
-<input type="text" name="description"><br>
-Date:
-<select name="month">
+
+<form id ="form-id" onsubmit="testInput()">
+
+<div class = "description">
+Description
+<input type="text" id="description" name = "description"><br>
+</div>
+
+<div class = "date">
+Date
+<select id="month" name = "month">
     <option value="jan">January</option>
     <option value="feb">February</option>
     <option value="march">March</option>
@@ -75,7 +47,7 @@ Date:
     <option value="nov">November</option>
     <option value="dec">December</option>
 </select>
-<select name="day">
+<select id="day" name = "day">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -108,23 +80,57 @@ Date:
     <option value="30">30</option>
     <option value="31">31</option>
 </select><br>
+</div>
+
+<div class = "amount">
 Amount:
-<input type="text" name="amount"><br>
+<input type="text" id="amount" name = "amount"><br>
 <br>
+</div>
+
+<div class = "category">
 Category:<br>
-<input type="radio" name="category" value="Food" checked> Food <br>
-<input type="radio" name="category" value="Rent"> Rent<br>
-<input type="radio" name="category" value="Bills"> Bills<br>
-<input type="radio" name="category" value="Clothes"> Clothes<br>
-<input type="radio" name="category" value="Makeup"> Makeup<br>
-<input type="radio" name="category" value="Gifts"> Gifts<br>
-<input type="radio" name="category" value="Personal"> Personal<br>
-<input type="radio" name="category" value="Misc"> Misc/Other<br>
+<input type="radio" id="food" value="Food" checked> Food <br>
+<input type="radio" id="rent" value="Rent"> Rent<br>
+<input type="radio" id="bills" value="Bills"> Bills<br>
+<input type="radio" id="clothes" value="Clothes"> Clothes<br>
+<input type="radio" id="makeup" value="Makeup"> Makeup<br>
+<input type="radio" id="gifts" value="Gifts"> Gifts<br>
+<input type="radio" id="personal" value="Personal"> Personal<br>
+<input type="radio" id="misc" value="Misc"> Misc/Other<br>
 <br>
-<input type="submit" value="Submit">
+</div>
+<input type="submit">
+</form>
 </article>
 
 <footer style="font-family:avenir">Pearl Xie</footer>
 </div>
+
+
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC5OZR25PCUhi3S9hfd7chiGity3hSUUEY",
+    authDomain: "capstone-52a74.firebaseapp.com",
+    databaseURL: "https://capstone-52a74.firebaseio.com",
+    storageBucket: "capstone-52a74.appspot.com",
+    messagingSenderId: "1008070721216"
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+  
+</script>
+
+
+<script type = "text/javascript" src = "database.js"></script>
 </body>
 </html>

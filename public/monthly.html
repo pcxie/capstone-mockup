@@ -1,44 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-div.container {
-    width: 100%;
-    border: 1px solid gray;
-}
-
-header, footer {
-    padding: 1em;
-    color: white;
-    background-color: #669999;
-    clear: left;
-    text-align: center;
-}
-
-nav {
-    float: left;
-    max-width: 160px;
-    margin: 0;
-    padding: 1em;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-   
-nav ul a {
-    text-decoration: none;
-}
-
-article {
-    margin-left: 170px;
-    border-left: 1px solid gray;
-    padding: 1em;
-    overflow: hidden;
-}
-</style>
 <title>Monthly Report</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div class = "container">
@@ -46,7 +10,7 @@ article {
 
 <nav>
   <ul>
-    <li style="font-family:avenir"><a href="home.html">Home</a></li>
+    <li style="font-family:avenir"><a href="index.html">Home</a></li>
     <br>
     <li style="font-family:avenir"><a href="input.html">Input a transaction</a></li>
     <br>
@@ -59,7 +23,7 @@ article {
 <article style="font-family:avenir">
 <img src="http://www.mymoneyblog.com/images/0807/exp1.jpg" alt="pie_chart" style="float:right;width:284px;height:200px;">
 <p>[List of monthly transactions thus far goes here]</p>
-<ul>
+<ul id='listOutput'>
 	<li>$7.57 - Chipotle</li>
 	<li>$50.00 - Sephora</li>
 	<li>$</li>
@@ -72,5 +36,29 @@ article {
 
 <footer style="font-family:avenir">Pearl Xie</footer>
 </div>
+
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC5OZR25PCUhi3S9hfd7chiGity3hSUUEY",
+    authDomain: "capstone-52a74.firebaseapp.com",
+    databaseURL: "https://capstone-52a74.firebaseio.com",
+    storageBucket: "capstone-52a74.appspot.com",
+    messagingSenderId: "1008070721216"
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+  
+</script>
+
+<script type = "text/javascript" src = "database.js"></script>
 </body>
 </html>
